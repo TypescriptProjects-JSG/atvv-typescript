@@ -71,7 +71,15 @@ async function adicionar(item,id,relacao){
         values(${id},${item}, 1);`)
     }
 }
-
+// relação
+async function relacaoProdutos(){
+    const con = await connect();
+    return [rows] = await con.query(`select * from relacaoprodutos;`)
+}
+async function relacaoServicos(){
+    const con = await connect();
+    return [rows] = await con.query(`select * from relacaoservicos;`)
+}
 
 
 // servidor
@@ -202,6 +210,40 @@ app.post("/adicionar", (req, res) => {
 
     adicionar(item,id,relacao)
 }); 
+
+// relação
+app.get("/relacao/produtos", (req, resp) => {
+    async function main() {
+        produtos = await relacaoProdutos()
+        produtos = produtos[0]
+        prods = new Array
+        for(k in produtos){
+            prod = new Array
+            for(i in produtos[k]){
+                prod.push(produtos[k][i])
+            }
+            prods.push(prod)
+        }
+        resp.send(prods);
+        }
+    main()
+    });
+app.get("/relacao/servicos", (req, resp) => {
+    async function main() {
+        var servicos = await relacaoServicos()
+        produtos = servicos[0]
+        prods = new Array
+        for(k in produtos){
+            prod = new Array
+            for(i in produtos[k]){
+                prod.push(produtos[k][i])
+            }
+            prods.push(prod)
+        }
+        resp.send(prods);
+        }
+    main()
+    });
 
 app.listen(3001, () => {
     console.log("rodando na porta 3001");

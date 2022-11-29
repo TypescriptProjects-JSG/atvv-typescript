@@ -1,7 +1,11 @@
 import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
+import maisConsiumidos from '../script/maisConsumidos';
 
 function Consumos() {
+    const dados = maisConsiumidos()
+    const prod = dados[0]
+    const serv = dados[1]
     return (
         <section>
             <header>
@@ -17,12 +21,15 @@ function Consumos() {
                                 <th>Quantidade</th>
                             </tr>
                         </thead>
+                        {typeof prod !== 'undefined' && prod.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>Creme</td>
-                                <td>12</td>
+                                <td> {value[0]} </td>
+                                <td> {value[1]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                     <h1>Serviço mais consumido</h1>
                     <Table striped bordered hover variant="light">
@@ -32,12 +39,15 @@ function Consumos() {
                                 <th>Quantidade</th>
                             </tr>
                         </thead>
+                        {typeof serv !== 'undefined' && serv.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>Massagem</td>
-                                <td>6</td>
+                                <td> {value[0]} </td>
+                                <td> {value[1]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                 </div>
             </main>

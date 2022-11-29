@@ -1,7 +1,9 @@
 import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
+import maisQta from '../script/maiorQnt';
 
 function Consumos() {
+    const dados = maisQta();
     return (
         <section>
             <header>
@@ -19,14 +21,17 @@ function Consumos() {
                                 <th>Total</th>
                             </tr>
                         </thead>
+                        {typeof dados !== 'undefined' && dados.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>Carlos Eduardo Falandes</td>
-                                <td>2</td>
-                                <td>4</td>
-                                <td>6</td>
+                                <td> {value[1]} </td>
+                                <td> {value[2]} </td>
+                                <td> {value[3]} </td>
+                                <td> {value[4]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                 </div>
             </main>

@@ -1,7 +1,9 @@
 import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
+import maisValor from '../script/maiorValor';
 
 function Consumos() {
+    const dados = maisValor();
     return (
         <section>
             <header>
@@ -15,28 +17,21 @@ function Consumos() {
                             <tr>
                                 <th>Nome</th>
                                 <th>Total Produtos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Carlos Eduardo Falandes</td>
-                                <td>670</td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                    <Table striped bordered hover variant="light">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
                                 <th>Total Serviços</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
+                        {typeof dados !== 'undefined' && dados.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>Carlos Eduardo Falandes</td>
-                                <td>700</td>
+                                <td> {value[1]} </td>
+                                <td> {value[2]} </td>
+                                <td> {value[3]} </td>
+                                <td> {value[4]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                 </div>
             </main>

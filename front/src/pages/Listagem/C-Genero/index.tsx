@@ -1,7 +1,11 @@
 import { Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
+import genero from '../script/genero';
 
 function Consumos() {
+    const dados = genero()
+    const masc = dados[0]
+    const femi = dados[1]
     return (
         <section>
             <header>
@@ -16,13 +20,14 @@ function Consumos() {
                                 <th>Nome: </th>
                             </tr>
                         </thead>
+                        {typeof masc !== 'undefined' && masc.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>
-                                    Carlos Eduardo Falandes
-                                </td>
+                                <td> {value[1]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                     <h1>Clientes Feminino</h1>
                     <Table striped bordered hover variant="light">
@@ -31,13 +36,14 @@ function Consumos() {
                                 <th>Nome: </th>
                             </tr>
                         </thead>
+                        {typeof femi !== 'undefined' && femi.map((value) => {
+                            return value ?
                         <tbody>
                             <tr>
-                                <td>
-                                    Geovana Alberta
-                                </td>
+                                <td> {value[1]} </td>
                             </tr>
                         </tbody>
+                        :null})}
                     </Table>
                 </div>
             </main>

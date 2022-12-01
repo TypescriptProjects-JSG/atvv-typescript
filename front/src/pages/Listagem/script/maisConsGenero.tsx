@@ -97,9 +97,34 @@ function maisConsGenero(){
     }
     listaSfeminino = listaSfeminino.sort((a,b) => b[1] - a[1]);
 
+    var Pfeminino = new Array;
+    for(var k=0; listaPfeminino.length>k; ++k){
+        if(listaPfeminino[k][1] != 0){
+            Pfeminino.push(listaPfeminino[k])
+        }
+    }
+    var Sfeminino = new Array;
+    for(var k=0; listaSfeminino.length>k; ++k){
+        if(listaSfeminino[k][1] != 0){
+            Sfeminino.push(listaSfeminino[k])
+        }
+    }
+    var Pmasculino = new Array;
+    for(var k=0; listaPmasculino.length>k; ++k){
+        if(listaPmasculino[k][1] != 0){
+            Pmasculino.push(listaPmasculino[k])
+        }
+    }
+    var Smasculino = new Array;
+    for(var k=0; listaSmasculino.length>k; ++k){
+        if(listaSmasculino[k][1] != 0){
+            Smasculino.push(listaSmasculino[k])
+        }
+    }
 
 
-    return [[listaPfeminino,listaPmasculino],[listaSfeminino,listaSmasculino]]
+
+    return [[Pfeminino,Pmasculino],[Sfeminino,Smasculino]]
 }
 
 export default maisConsGenero;

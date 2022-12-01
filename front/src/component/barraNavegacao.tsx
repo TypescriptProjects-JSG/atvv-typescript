@@ -30,8 +30,8 @@ function Navbar_() {
                                     <NavDropdown.Item onClick={() => navigate("/consumo_consumidor")}>Mais consumiram</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_genero")}>Gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_psmaisconsumido")}>Mais consumidos</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => navigate("/genero_consumidor")}>Mais consumidos por gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_menor")}>Menos consumiram</NavDropdown.Item>
-                                    <NavDropdown.Item onClick={() => navigate("/genero_consumidor")}>Consumo por gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_valor")}>Mais comsumiram em valor</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>

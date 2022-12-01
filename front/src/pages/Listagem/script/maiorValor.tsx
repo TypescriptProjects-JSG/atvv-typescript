@@ -41,6 +41,9 @@ function maisValor(){
 
         consumidos.push([cliente[0],cliente[1],produto,servico,(produto+servico)])
     }
+
+    consumidos = consumidos.sort((a,b) => b[4] - a[4]);
+    consumidos.splice(5,)
     
     return consumidos
 }

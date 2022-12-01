@@ -7,10 +7,10 @@ function Navbar_() {
     const navigate = useNavigate()
     return (
         <>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar className='nav' variant="dark" expand="lg">
                 <Container>
                     <div>
-                        <Navbar.Brand onClick={() => navigate("/")}>WB</Navbar.Brand>
+                        <Navbar.Brand onClick={() => navigate("/")} className="logo"><strong>W B </strong> </Navbar.Brand>
                     </div>
                     <ul className="nav-links">
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -21,7 +21,7 @@ function Navbar_() {
                                     <NavDropdown.Item onClick={() => navigate("/produtos")}>Produtos</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/servicos")}>Serviços</NavDropdown.Item>
                                 </NavDropdown>
-                                <NavDropdown title="Cadastrar" id="basic-nav-dropdown">
+                                <NavDropdown title="Cadastro" id="basic-nav-dropdown">
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_cliente")}>Cliente</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_produto")}>Produto</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_servico")}>Serviço</NavDropdown.Item>
@@ -31,6 +31,7 @@ function Navbar_() {
                                     <NavDropdown.Item onClick={() => navigate("/consumo_genero")}>Gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_psmaisconsumido")}>Mais consumidos</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_menor")}>Menos consumiram</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => navigate("/genero_consumidor")}>Consumo por gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_valor")}>Mais comsumiram em valor</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>

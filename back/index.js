@@ -9,10 +9,23 @@ async function connect(){
     return connection;
 }
 // cadastro no banco
-async function cliente(nome,nome_social,genero,cpf,rg,rg_data,telefone){
+async function cliente(nome,nome_social,genero,cpf,rgs,telefones){
     const con = await connect();
-    con.query(`insert into clientes (nome,nome_social,genero,cpf,rg,rg_data,telefone) 
-    values('${nome}','${nome_social}','${genero}','${cpf}','${rg}','${rg_data}','${telefone}')`)
+    con.query(`insert into clientes (nome,nome_social,genero,cpf) 
+    values('${nome}','${nome_social}','${genero}','${cpf}')`)
+    id = await con.query(`select cliente_id from clientes where cpf = '${cpf}';`)
+    id =  id[0][0].cliente_id
+    for(k=0; rgs.length>k; ++k){
+        var rgdado = rgs[k]
+        var rg = rgdado[0]
+        var data = rgdado[1]
+        con.query(`insert into rgs (rg,rg_data,cliente_id) 
+        values('${rg}','${data}','${id}')`)
+    }
+    for(k=0; telefones.length>k; ++k){
+        con.query(`insert into telefones (telefone,cliente_id) 
+        values('${telefones[k]}','${id}')`)
+    }
 }
 async function produtoc(produto,preco){
     const con = await connect();
@@ -96,11 +109,22 @@ app.post("/cadastro/cliente", (req, res) => {
     const { nome_social } = req.body;
     const { genero } = req.body;
     const { cpf } = req.body;
-    const { rg } = req.body;
-    const { data_rg } = req.body;
-    const { telefone } = req.body;
 
-    cliente(nome,nome_social,genero,cpf,rg,data_rg,telefone)
+    cliente(nome,nome_social,genero,cpf,Rgs,Telefones)
+    Rgs = new Array;
+    Telefones = new Array;
+  });
+
+var Rgs = new Array;
+app.post("/cadastro/cliente/rgs", (req, res) => {
+    const { dado } = req.body;
+    Rgs.push(dado)
+  });
+
+var Telefones = new Array;
+app.post("/cadastro/cliente/telefones", (req, res) => {
+    const { dado } = req.body;
+    Telefones.push(dado)
   });
 
 app.post("/cadastro/produto", (req, res) => {

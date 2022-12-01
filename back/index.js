@@ -42,6 +42,14 @@ async function clientesc(){
     const con = await connect();
     return [rows] = await con.query(`select * from clientes;`)
 }
+async function rgsc(){
+    const con = await connect();
+    return [rows] = await con.query(`select * from rgs;`)
+}
+async function telefonesc(){
+    const con = await connect();
+    return [rows] = await con.query(`select * from telefones;`)
+}
 async function produtosc(){
     const con = await connect();
     return [rows] = await con.query(`select * from produtos;`)
@@ -147,6 +155,10 @@ app.get("/ver/clientes", (req, resp) => {
     async function main() {
         clientes = await clientesc()
         clientes = clientes[0]
+        rgs = await rgsc()
+        rgs = rgs[0]
+        telefones = await telefonesc()
+        telefones = telefones[0]
         clis = new Array
         for(k in clientes){
             cli = new Array
@@ -155,8 +167,33 @@ app.get("/ver/clientes", (req, resp) => {
             }
             clis.push(cli)
         }
-        resp.send(clis);
+
+       
+        var resposta = new Array;
+        for(k in clis){
+            var telefone = new Array;
+            var rg = new Array;
+            for(t in telefones){
+                tel = telefones[t]
+                if(tel.cliente_id == clis[k][0]){
+                    telefone.push(tel.telefone)
+                }
+            }
+            for(r in rgs){
+                R = rgs[r]
+                if(R.cliente_id == clis[k][0]){
+                    rg.push(R.rg)
+                }
+            }
+
+            clis[k].push(rg)
+            clis[k].push(telefone)
+            resposta.push(clis[k])
         }
+        console.log(resposta);
+        resp.send(resposta);
+        }
+        
     main()
     });
 

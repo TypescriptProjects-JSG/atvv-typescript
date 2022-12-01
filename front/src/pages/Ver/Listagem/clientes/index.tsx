@@ -51,7 +51,7 @@ function Clientes() {
                                 <td> {value[3]} </td>
                                 <td> {value[4]} </td>
                                 <td> {value[5]} </td>
-                                <td> {value[7]} </td>                    
+                                <td> {value[6]} </td>                  
                                 <td>
                                     <div>
                                         <a href={`/editar_cliente/${value[0]}`}>Editar</a> <br />     

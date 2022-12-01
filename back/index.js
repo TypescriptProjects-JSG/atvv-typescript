@@ -269,8 +269,30 @@ app.get("/ver/servicos", (req, resp) => {
 app.post("/deletar", (req, res) => {
     const { id } = req.body;
     const { tabela } = req.body;
-
-    deletar(id,tabela)
+    
+    async function main(){
+        if(tabela == 'cliente'){
+            rgs = await rgsc()
+            rgs = rgs[0]
+            telefones = await telefonesc()
+            telefones = telefones[0]
+            for(k in rgs){
+                rg = rgs[k]
+                if(rg.cliente_id == id){
+                    deletar(rg.rg_id,'rg')
+                }
+            }
+            for(k in telefones){
+                tell = telefones[k]
+                if(tell.cliente_id == id){
+                    console.log(tell.telefone_id);
+                    deletar(tell.telefone_id,'telefone')
+                }
+            }
+        }
+        deletar(id,tabela)
+    }
+    main()
 }); 
 
 // editar

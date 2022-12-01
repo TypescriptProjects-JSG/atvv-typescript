@@ -27,10 +27,10 @@ const clientes = [
         cpf: '3333333333',
         dataEmissaoCpf: '02/12/1987',
         genero: 'Masculino',
-        rg: '',
-        dataEmissao:'',
-        telefoneDDD: '',
-        telefoneNumero: ''
+        rg: '222222222000',
+        dataEmissao:'14/05/2005',
+        telefoneDDD: '122',
+        telefoneNumero: '222222222'
     },
     {
         nome: 'Antônia',
@@ -158,7 +158,7 @@ const clientes = [
         nomeSocial: 'Marcos',
         cpf: '711111111111',
         dataEmissaoCpf: '20/12/2012',
-        genero: 'Feminino',
+        genero: 'Masculino',
         rg: '711111111111000',
         dataEmissao:'20/12/2012',
         telefoneDDD: '85',
@@ -169,7 +169,7 @@ const clientes = [
         nomeSocial: 'Matheus',
         cpf: '81111111111',
         dataEmissaoCpf: '02/02/1982',
-        genero: 'Feminino',
+        genero: 'Masculino',
         rg: '81111111111000',
         dataEmissao:'02/02/1982',
         telefoneDDD: '95',
@@ -180,15 +180,15 @@ const clientes = [
         nomeSocial: 'João',
         cpf: '9111111111',
         dataEmissaoCpf: '19/01/2004',
-        genero: 'Feminino',
+        genero: 'Masculino',
         rg: '9111111111000',
         dataEmissao:'19/01/2004',
         telefoneDDD: '75',
         telefoneNumero: '9111111111'
     },
     {
-        nome: 'Lucas',
-        nomeSocial: 'Lucas',
+        nome: 'Luana',
+        nomeSocial: 'Luana',
         cpf: '1011111111',
         dataEmissaoCpf: '04/11/1998',
         genero: 'Feminino',
@@ -209,8 +209,8 @@ const clientes = [
         telefoneNumero: '1211111111'
     },
     {
-        nome: 'Otávio',
-        nomeSocial: 'Otávio',
+        nome: 'Otávia',
+        nomeSocial: 'Otávia',
         cpf: '1311111111',
         dataEmissaoCpf: '28/08/2008',
         genero: 'Feminino',
@@ -242,8 +242,8 @@ const clientes = [
         telefoneNumero: '1511111111'
     },
     {
-        nome: 'Kevin',
-        nomeSocial: 'Kevin',
+        nome: 'Evin',
+        nomeSocial: 'Evin',
         cpf: '1611111111',
         dataEmissaoCpf: '23/05/2004',
         genero: 'Feminino',
@@ -253,8 +253,8 @@ const clientes = [
         telefoneNumero: '1611111111'
     },
     {
-        nome: 'Geraldo',
-        nomeSocial: 'Geraldo',
+        nome: 'Geralda',
+        nomeSocial: 'Geralda',
         cpf: '1711111111',
         dataEmissaoCpf: '10/07/1999',
         genero: 'Feminino',
@@ -286,8 +286,8 @@ const clientes = [
         telefoneNumero: '1911111111'
     },
     {
-        nome: 'Vinicius',
-        nomeSocial: 'Vinicius',
+        nome: 'Van',
+        nomeSocial: 'Van',
         cpf: '2011111111',
         dataEmissaoCpf: '09/11/2005',
         genero: 'Feminino',
@@ -434,10 +434,23 @@ async function connect(){
 }
 
 
-async function Cliente(nome,nome_social,genero,cpf,rg,rg_data,telefone){
+async function Cliente(nome,nome_social,genero,cpf,rgs,telefones){
     const con = await connect();
-    con.query(`insert into clientes (nome,nome_social,genero,cpf,rg,rg_data,telefone) 
-    values('${nome}','${nome_social}','${genero}','${cpf}','${rg}','${rg_data}','${telefone}')`)
+    con.query(`insert into clientes (nome,nome_social,genero,cpf) 
+    values('${nome}','${nome_social}','${genero}','${cpf}')`)
+    id = await con.query(`select cliente_id from clientes where cpf = '${cpf}';`)
+    id =  id[0][0].cliente_id
+    for(k=0; rgs.length>k; ++k){
+        var rgdado = rgs[k]
+        var rg = rgdado[0]
+        var data = rgdado[1]
+        con.query(`insert into rgs (rg,rg_data,cliente_id) 
+        values('${rg}','${data}','${id}')`)
+    }
+    for(k=0; telefones.length>k; ++k){
+        con.query(`insert into telefones (telefone,cliente_id) 
+        values('${telefones[k]}','${id}')`)
+    }
 }
 async function produtoc(produto,preco){
     const con = await connect();
@@ -462,7 +475,7 @@ async function adicionar(item,id,relacao,quantidade){
 
 for(k=0; clientes.length>k; ++k){
     var cliente = clientes[k]
-    Cliente(cliente.nome,cliente.nomeSocial,cliente.genero,cliente.cpf,cliente.rg,cliente.dataEmissao,cliente.telefoneDDD+' '+cliente.telefoneNumero)
+    Cliente(cliente.nome,cliente.nomeSocial,cliente.genero,cliente.cpf,[cliente.rg,cliente.dataEmissao],cliente.telefoneDDD+' '+cliente.telefoneNumero)
 }
 
 for(k=0; produtos.length>k; ++k){

@@ -40,6 +40,15 @@ function EditarCliente() {
           clearAreas()
         })    
     }
+    
+    function excluir(numero: number,tipo: string) {     
+        Axios.post("http://localhost:3001/deletar", {
+          id: numero,
+          tabela: tipo
+        }).then((res)=>{
+          console.log(res)
+        })    
+    }
 
     const [list, setList] = useState([]);
     useEffect(() => {
@@ -56,6 +65,36 @@ function EditarCliente() {
             break 
         }  
     }
+
+    const [rgs, setRgs] = useState([]);
+    useEffect(() => {
+      Axios.get(`http://localhost:3001/ver/clientes/rgs`).then((resp) => {
+        setRgs(resp.data);
+      });
+    }, [])
+
+    var Rg = new Array;
+    for(let k=0; rgs.length > k; ++k){
+        var RG = rgs[k]
+        if(RG[1] == id){
+            Rg.push(RG)
+        }  
+    }   
+    
+    const [telefones, setTelefones] = useState([]);
+    useEffect(() => {
+      Axios.get(`http://localhost:3001/ver/clientes/telefones`).then((resp) => {
+        setTelefones(resp.data);
+      });
+    }, [])
+
+    var Tell = new Array;
+    for(let k=0; telefones.length > k; ++k){
+        var tell = telefones[k]
+        if(tell[1] == id){
+            Tell.push(tell)
+        }  
+    }      
     
     
     return (
@@ -84,18 +123,25 @@ function EditarCliente() {
                             <label>CPF:</label>
                             <input type="text" placeholder={Nome[4]} onChange={(e) => setCpf(e.target.value)}/>
                         </div>
-                        <div className="field">
-                            <label>RG:</label>
-                            <input type="text" placeholder={Nome[5]} onChange={(e) => setRg(e.target.value)}/>
-                        </div>
-                        <div className="field">
-                            <label>RG data de emissao:</label>
-                            <input type="date" onChange={(e) => setDataRg(e.target.value)}/>
-                        </div>
-                        <div className="field">
-                            <label>Telefone:</label>
-                            <input placeholder={Nome[7]} type="text" onChange={(e) => setTelefone(e.target.value)}/>
-                        </div>
+                        {typeof Rg !== 'undefined' && Rg.map((value) => {
+                            return value ?
+                            <div className="field">
+                                <label>RG:</label>
+                                <input type="text" placeholder={value[2]} onChange={(e) => setRg(e.target.value)}/>
+                            <br/>
+                                <label>RG data de emissao:</label>
+                                <input type="date" placeholder={value[3]} onChange={(e) => setDataRg(e.target.value)}/>
+                                <a href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0],'rg')}>Remover</a>
+                            </div>
+                        :null})}
+                        {typeof Tell !== 'undefined' && Tell.map((value) => {
+                            return value ?
+                            <div className="field">
+                                <label>Telefone:</label>
+                                <input placeholder={value[2]} type="text" onChange={(e) => setTelefone(e.target.value)}/>
+                                <a href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0],'telefone')}>Remover</a>
+                            </div>
+                        :null})}
                         <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
                     </form>
                 </div>

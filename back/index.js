@@ -190,10 +190,43 @@ app.get("/ver/clientes", (req, resp) => {
             clis[k].push(telefone)
             resposta.push(clis[k])
         }
-        console.log(resposta);
         resp.send(resposta);
         }
         
+    main()
+    });
+
+app.get("/ver/clientes/rgs", (req, resp) => {
+    async function main() {
+        rgs = await rgsc()
+        rgs = rgs[0]
+        RGS = new Array
+        for(k in rgs){
+            RG = new Array
+            for(i in rgs[k]){
+                RG.push(rgs[k][i])
+            }
+            RGS.push(RG)
+        }
+        resp.send(RGS);
+        }
+    main()
+    });
+
+app.get("/ver/clientes/telefones", (req, resp) => {
+    async function main() {
+        telefones = await telefonesc()
+        telefones = telefones[0]
+        Tell = new Array
+        for(k in telefones){
+            tell = new Array
+            for(i in telefones[k]){
+                tell.push(telefones[k][i])
+            }
+            Tell.push(tell)
+        }
+        resp.send(Tell);
+        }
     main()
     });
 

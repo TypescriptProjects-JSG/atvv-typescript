@@ -25,6 +25,10 @@ function menorQta(){
         consumidos.push([cliente[0],cliente[1],produto,servico,(produto+servico)])
     }
     
+    consumidos = consumidos.sort((a,b) => a[4] - b[4]);
+    consumidos.splice(10,)
+
+
     return consumidos
 }
 

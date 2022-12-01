@@ -13,7 +13,7 @@ function Consumos() {
             </header>
             <main>
                 <div className="tables">
-                    <h1>Clientes Masculino</h1>
+                    <h1>Masculino</h1>
                     <Table striped bordered hover variant="light">
                         <thead>
                             <tr>
@@ -29,7 +29,7 @@ function Consumos() {
                         </tbody>
                         :null})}
                     </Table>
-                    <h1>Clientes Feminino</h1>
+                    <h1>Feminino</h1>
                     <Table striped bordered hover variant="light">
                         <thead>
                             <tr>

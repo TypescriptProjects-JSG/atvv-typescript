@@ -27,7 +27,7 @@ function Navbar_() {
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_servico")}>Serviço</NavDropdown.Item>
                                 </NavDropdown>
                                 <NavDropdown title="Listagem" id="basic-nav-dropdown">
-                                    <NavDropdown.Item onClick={() => navigate("/consumo_consumidor")}>Mais consumiram</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={() => navigate("/consumo_consumidor")}>Mais compraram</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_genero")}>Gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_psmaisconsumido")}>Mais consumidos</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/genero_consumidor")}>Mais consumidos por gênero</NavDropdown.Item>

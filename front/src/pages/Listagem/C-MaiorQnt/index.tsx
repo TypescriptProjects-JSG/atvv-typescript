@@ -11,7 +11,7 @@ function Consumos() {
             </header>
             <main>
                 <div className="tables">
-                    <h1>Clietes que mais consumiram</h1>
+                    <h1>Clietes que mais consumiram em quantidade:</h1>
                     <Table striped bordered hover variant="light">
                         <thead>
                             <tr>

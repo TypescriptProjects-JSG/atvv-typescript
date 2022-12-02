@@ -1,3 +1,4 @@
+drop database wb; 
 create database wb;
 use wb;
 
@@ -6,9 +7,21 @@ cliente_id int primary key auto_increment,
 nome varchar(30),
 nome_social varchar(30),
 genero varchar(30),
-cpf varchar(30),
+cpf varchar(30)
+);
+
+create table rgs(
+rg_id int primary key auto_increment,
+cliente_id integer,
+CONSTRAINT cliente_idd FOREIGN KEY (cliente_id) REFERENCES clientes (cliente_id),
 rg varchar(30),
-rg_data date,
+rg_data varchar(30)
+);
+
+create table telefones(
+telefone_id int primary key auto_increment,
+cliente_id integer,
+CONSTRAINT cliente_i FOREIGN KEY (cliente_id) REFERENCES clientes (cliente_id),
 telefone varchar(30)
 );
 

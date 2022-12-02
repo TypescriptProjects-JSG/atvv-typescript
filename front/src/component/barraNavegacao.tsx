@@ -7,7 +7,7 @@ function Navbar_() {
     const navigate = useNavigate()
     return (
         <>
-            <Navbar className='nav' variant="dark" expand="lg">
+            <Navbar className='nav' variant="light" expand="lg">
                 <Container>
                     <div>
                         <Navbar.Brand onClick={() => navigate("/")} className="logo"><strong>W B </strong> </Navbar.Brand>
@@ -26,7 +26,7 @@ function Navbar_() {
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_produto")}>Produto</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/cadastrar_servico")}>Serviço</NavDropdown.Item>
                                 </NavDropdown>
-                                <NavDropdown title="Listagem" id="basic-nav-dropdown">
+                                <NavDropdown title="Listagens" id="basic-nav-dropdown">
                                     <NavDropdown.Item onClick={() => navigate("/consumo_consumidor")}>Mais compraram</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_genero")}>Clientes por gênero</NavDropdown.Item>
                                     <NavDropdown.Item onClick={() => navigate("/consumo_psmaisconsumido")}>Mais consumidos</NavDropdown.Item>

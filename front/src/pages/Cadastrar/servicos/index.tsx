@@ -1,6 +1,7 @@
 import { Button } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao'
-import { useState } from "react";
+import '../styles.css'
+import React, { useState } from "react";
 import Axios from "axios";
 import { toast } from 'react-toastify';
 
@@ -29,16 +30,16 @@ function CadastrarServicos() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Cadastrar Serviços</h1>
+                <h1 className='cadastro-titulo'> <strong> Cadastro de Serviços</strong></h1>
                 <div className="forms">
                     <form>
                         <div className="field">
-                            <label>Serviço:</label>
-                            <input type="text" onChange={(e) => setServico(e.target.value)}/>
+                            <label>Nome do serviço:</label>
+                            <input placeholder='Insira o nome do serviço' type="text" onChange={(e) => setServico(e.target.value)}/>
                         </div>
                         <div className="field">
-                            <label>Preço:</label>
-                            <input type="number" onChange={(e) => setPreco(e.target.value)}/>
+                            <label>Valor R$:</label>
+                            <input placeholder='XX,XX' type="number" onChange={(e) => setPreco(e.target.value)}/>
                         </div>
                         <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
                     </form>

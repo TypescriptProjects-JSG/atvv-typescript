@@ -1,7 +1,6 @@
-import {  Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../../../component/barraNavegacao';
-import { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import '../../Listagem/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from "react";
@@ -74,8 +73,8 @@ function AdcProdutos() {
                 <NavBar_ />
             </header>
             <main>
-                <h1 className="titles">  <strong> Sacola de compras de:  </strong></h1>
-                <h2 className="titles">  {Nome[1]}, Total gasto: {valorTotal}</h2>
+                <h1 className="titles">  <strong> Sacola de compras de:  {Nome[1]}  </strong></h1>
+                <h2 className="titles">  <strong>Total gasto: R$ {valorTotal} </strong> </h2>
                 <div className="tables">
                     <Table striped bordered hover variant="light">
                         <thead className="titles-table">
@@ -91,7 +90,7 @@ function AdcProdutos() {
                             <tr>
                                 <td> {value[0]} </td>
                                 <td> {value[1]} </td>
-                                <td> {value[2]} </td>       
+                                <td> R$ {value[2]} </td>       
                             </tr>
                         </tbody>
                         :null})}
@@ -104,7 +103,7 @@ function AdcProdutos() {
                             <tr>
                                 <th>Produto</th>
                                 <th>Preço</th>
-                                <th>Ações</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         {typeof list !== 'undefined' && list.map((value) => {
@@ -112,19 +111,19 @@ function AdcProdutos() {
                         <tbody>
                             <tr>
                                 <td> {value[1]} </td>
-                                <td> {value[2]} </td>                
+                                <td> R$ {value[2]} </td>                
                                 <td>
                                     <div>
-                                        <a href="" type='submit' onClick={() => handleSubmit(value[0])}>Adicionar ao cliente</a>
+                                        <a className="add-produto" href="" type='submit' onClick={() => handleSubmit(value[0])}>Adicionar ao cliente</a>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                         :null})}
                     </Table>
-                    <div className="button-l">
+                </div>
+                <div className="button-l">
                         <Button className="submit" variant="outline" onClick={() => navigate(-1)}>Voltar</Button>{' '} 
-                    </div>
                 </div>
             </main>
         </section>

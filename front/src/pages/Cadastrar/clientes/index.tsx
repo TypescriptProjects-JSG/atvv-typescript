@@ -73,43 +73,48 @@ function CadastrarClientes() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Cadastrar Cliente</h1>
+                <h1 className='cadastro-titulo'><strong>Cadastro de Clientes</strong></h1>
                 <div className="forms">
                     <form>
                         <div className="field">
                             <label>Nome Completo:</label>
-                            <input type="text" onChange={(e) => setNome(e.target.value)}/>
+                            <input placeholder='Insira o nome completo' type="text" onChange={(e) => setNome(e.target.value)}/>
                         </div>
                         <div className="field">
                             <label>Nome social:</label>
-                            <input type="text" onChange={(e) => setNomeSocial(e.target.value)}/>
+                            <input placeholder='Insira o nome social' type="text" onChange={(e) => setNomeSocial(e.target.value)}/>
                         </div>
-                        <div className="field">
-                            <label>Gênero:</label>
-                            <input type="text" onChange={(e) => setGenero(e.target.value)}/>
-                        </div>
-                        <div className="field">
-                            <label>CPF:</label>
-                            <input type="text" placeholder='XXX.XXX.XXX-XX' onChange={(e) => setCpf(e.target.value)}/>
-                        </div>
-                        {formRgs.map(() => (
-                            <div className="field">
-                                <label>RG:</label>
-                                <input type="text" placeholder='XX.XXX.XXX-X' onChange={(e) => setRg(e.target.value)}/>
-                                <br/>
-                                <label>RG data de emissao:</label>
-                                <input type="date" onChange={(e) => setDataRg(e.target.value)}/>
+                        <div className="campo-duplo">
+                            <div className="field esquerda">
+                                <label>Gênero:</label>
+                                <input type="text" onChange={(e) => setGenero(e.target.value)}/>
                             </div>
-                        ))}
-                        <button className="add" type="button" onClick={() => addFormRg()}>Adicionar RG</button>
+                            <div className="field direita">
+                                <label>CPF:</label>
+                                <input type="text" placeholder='XXX.XXX.XXX-XX' onChange={(e) => setCpf(e.target.value)}/>
+                            </div>
+                        </div>
                         {formTelefones.map((e, index) => (
                             <div className="field">
                                 <label>Telefone:</label>
                                 <input placeholder='XX XXXXXXXX' type="text" onChange={(e) => setTelefone(e.target.value)}/>
                             </div>
                         ))}
-                        <button className="add" type="button" onClick={() => addFormTell()}>Adicionar Telefone</button>
-                        <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
+                        {formRgs.map(() => (
+                            <><div className="field">
+                                <label>RG:</label>
+                                <input type="text" placeholder='XX.XXX.XXX-X' onChange={(e) => setRg(e.target.value)} />
+                            </div><div className="field">
+                                    <label>RG data de emissao:</label>
+                                    <input type="date" onChange={(e) => setDataRg(e.target.value)} />
+                                </div></>
+                        ))}
+                        <div className="btns">
+                                <Button className="add add-color" variant="outline-dark" type="button" onClick={() => addFormTell()}>Adicionar Telefone</Button>
+                                <Button className="add add-color" variant="outline-dark" type="button" onClick={() => addFormRg()}>Adicionar RG</Button>
+                                <Button className="add" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
+                        </div>
+                        
                     </form>
                 </div>
             </main>

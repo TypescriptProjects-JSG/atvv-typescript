@@ -1,4 +1,4 @@
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
 import maisQta from '../script/maiorQnt';
 
@@ -11,9 +11,9 @@ function Consumos() {
             </header>
             <main>
                 <div className="tables">
-                    <h1>Clietes que mais consumiram em quantidade:</h1>
+                    <h1 className='titles'> <strong>Clientes que mais consumiram</strong></h1>
                     <Table striped bordered hover variant="light">
-                        <thead>
+                        <thead className='titles-table'>
                             <tr>
                                 <th>Nome</th>
                                 <th>Produtos</th>
@@ -23,12 +23,12 @@ function Consumos() {
                         </thead>
                         {typeof dados !== 'undefined' && dados.map((value) => {
                             return value ?
-                        <tbody>
+                        <tbody className='body-table'>
                             <tr>
                                 <td> {value[1]} </td>
                                 <td> {value[2]} </td>
                                 <td> {value[3]} </td>
-                                <td> {value[4]} </td>
+                                <td> R$ {value[4]} </td>
                             </tr>
                         </tbody>
                         :null})}

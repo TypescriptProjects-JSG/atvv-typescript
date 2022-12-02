@@ -1,6 +1,7 @@
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import NavBar_ from '../../../../component/barraNavegacao';
+import '../../../Cadastrar/styles.css'
 import { useParams } from 'react-router-dom'
 import Axios from "axios";
 import { useState, useEffect } from "react";
@@ -103,8 +104,7 @@ function EditarCliente() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Editar Cliente: {Nome[1]}</h1>
-                <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
+                <h1><strong>Editar Cliente:</strong> {Nome[1]}</h1>
                 <div className="forms">
                     <form>
                         <div className="field">
@@ -115,34 +115,42 @@ function EditarCliente() {
                             <label>Nome social:</label>
                             <input type="text" placeholder={Nome[2]} onChange={(e) => setNomeSocial(e.target.value)}/>
                         </div>
-                        <div className="field">
-                            <label>Gênero:</label>
-                            <input type="text" placeholder={Nome[3]} onChange={(e) => setGenero(e.target.value)}/>
-                        </div>
-                        <div className="field">
-                            <label>CPF:</label>
-                            <input type="text" placeholder={Nome[4]} onChange={(e) => setCpf(e.target.value)}/>
-                        </div>
-                        {typeof Rg !== 'undefined' && Rg.map((value) => {
-                            return value ?
-                            <div className="field">
-                                <label>RG:</label>
-                                <input type="text" placeholder={value[2]} onChange={(e) => setRg(e.target.value)}/>
-                            <br/>
-                                <label>RG data de emissao:</label>
-                                <input type="date" placeholder={value[3]} onChange={(e) => setDataRg(e.target.value)}/>
-                                <a href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0],'rg')}>Remover</a>
+                        <div className="campo-duplo">
+                            <div className="field esquerda">
+                                <label>Gênero:</label>
+                                <input type="text" placeholder={Nome[3]} onChange={(e) => setGenero(e.target.value)}/>
                             </div>
-                        :null})}
+                            <div className="field">
+                                <label>CPF:</label>
+                                <input type="text" placeholder={Nome[4]} onChange={(e) => setCpf(e.target.value)}/>
+                            </div>
+                        </div>
                         {typeof Tell !== 'undefined' && Tell.map((value) => {
                             return value ?
                             <div className="field">
                                 <label>Telefone:</label>
                                 <input placeholder={value[2]} type="text" onChange={(e) => setTelefone(e.target.value)}/>
-                                <a href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0],'telefone')}>Remover</a>
+                                <a className="remove" href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0],'telefone')}>Remover</a>
                             </div>
                         :null})}
-                        <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
+                        {typeof Rg !== 'undefined' && Rg.map((value) => {
+                            return value ?
+                            <><div className="field">
+                                    <label>RG:</label>
+                                    <input type="text" placeholder={value[2]} onChange={(e) => setRg(e.target.value)} />
+                                </div><div className="field">
+                                        <label>RG data de emissao:</label>
+                                        <input type="date" placeholder={value[3]} onChange={(e) => setDataRg(e.target.value)} />
+                                        <a className="remove" href={`/editar_cliente/${id}`} type='submit' onClick={() => excluir(value[0], 'rg')}>Remover</a>
+                                    </div></>
+                        :null})}
+                        
+                        <div className="campo-button">
+                            <div className="button-l">
+                            <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
+                            </div>
+                            <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
+                        </div>
                     </form>
                 </div>
             </main>

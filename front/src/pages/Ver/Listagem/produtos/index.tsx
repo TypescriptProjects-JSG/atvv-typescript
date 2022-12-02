@@ -1,5 +1,6 @@
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import NavBar_ from '../../../../component/barraNavegacao';
+import '../../Listagem/styles.css';
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -26,14 +27,14 @@ function Produtos() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Produtos</h1>
+                <h1 className="titles">  <strong>Produtos WB  </strong></h1>
                 <div className="tables">
                     <Table striped bordered hover variant="light">
-                        <thead>
+                        <thead className="titles-table">
                             <tr>
                                 <th>Produto</th>
                                 <th>Preço</th>
-                                <th>Ações</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         {typeof list !== 'undefined' && list.map((value) => {
@@ -41,11 +42,11 @@ function Produtos() {
                         <tbody>
                             <tr>
                                 <td> {value[1]} </td>
-                                <td> {value[2]} </td>                
+                                <td> R$ {value[2]} </td>                
                                 <td>
-                                    <div>
-                                        <a href={`/editar_produto/${value[0]}`}>Editar</a> <br /> 
-                                        <a href='/produtos' type='submit' onClick={() => handleSubmit(value[0])}>Remover</a>
+                                    <div className="dupla">
+                                        <a className="editar-cps"  href={`/editar_produto/${value[0]}`}>Editar</a> <br /> 
+                                        <a className="remover-cps" href='/produtos' type='submit' onClick={() => handleSubmit(value[0])}>Remover</a>
                                     </div>
                                 </td>
                             </tr>

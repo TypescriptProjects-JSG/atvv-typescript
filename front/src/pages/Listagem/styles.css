@@ -1,0 +1,16 @@
+.titles{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.titles-table{
+    color: #daa520;
+    text-align: center;
+}
+
+.body-table{
+    text-align: center;
+}
+

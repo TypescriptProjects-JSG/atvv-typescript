@@ -1,6 +1,6 @@
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import NavBar_ from '../../../../component/barraNavegacao';
-import './styles.css';
+import '../../Listagem/styles.css';
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -28,6 +28,7 @@ function Clientes() {
                 <NavBar_ />
             </header>
             <main>
+                <h1 className="titles"> <strong> Clientes WB </strong> </h1>
                 <h1>Clientes</h1>
                 <div className="tables">
                     <Table striped bordered hover variant="light">
@@ -39,7 +40,7 @@ function Clientes() {
                                 <th>CPF</th>
                                 <th>RG</th>
                                 <th>Telefone</th>
-                                <th>Ações</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         {typeof list !== 'undefined' && list.map((value) => {
@@ -54,10 +55,10 @@ function Clientes() {
                                 <td> {value[6]} </td>                  
                                 <td>
                                     <div>
-                                        <a href={`/editar_cliente/${value[0]}`}>Editar</a> <br />     
-                                        <a href={`/adicionar_produto/${value[0]}`}>Adicionar Produtos</a> <br />
-                                        <a href={`/adicionar_servico/${value[0]}`}>Adicionar Serviços</a> <br />
-                                        <a href='/clientes' type='submit' onClick={() => handleSubmit(value[0])}>Remover</a>
+                                        <a className="editar-cps" href={`/editar_cliente/${value[0]}`}>Editar</a> <br />     
+                                        <a className="adicionar" href={`/adicionar_produto/${value[0]}`}>Adicionar Produtos</a> <br />
+                                        <a className="adicionar" href={`/adicionar_servico/${value[0]}`}>Adicionar Serviços</a> <br />
+                                        <a className="remover-cps" href='/clientes' type='submit' onClick={() => handleSubmit(value[0])}>Remover</a>
                                     </div>
                                 </td>
                             </tr>

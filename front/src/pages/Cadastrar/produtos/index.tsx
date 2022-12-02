@@ -29,16 +29,16 @@ function CadastrarProdutos() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Cadastrar Produto</h1>
+                <h1 className='cadastro-titulo'> <strong>Cadastro de Produtos</strong></h1>
                 <div className="forms">
                     <form>
                         <div className="field">
-                            <label>Produto:</label>
-                            <input type="text" onChange={(e) => setProduto(e.target.value)}/>
+                            <label>Nome do produto:</label>
+                            <input placeholder='Insira o nome do produto'  type="text" onChange={(e) => setProduto(e.target.value)}/>
                         </div>
                         <div className="field">
-                            <label>Preço:</label>
-                            <input type="number" onChange={(e) => setPreco(e.target.value)}/>
+                            <label>Valor R$</label>
+                            <input placeholder='XX,XX' type="number" min={0} onChange={(e) => setPreco(e.target.value)}/>
                         </div>
                         <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
                     </form>

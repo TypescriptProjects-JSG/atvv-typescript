@@ -1,4 +1,4 @@
-import { Button, Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao';
 import maisConsiumidos from '../script/maisConsumidos';
 
@@ -13,9 +13,9 @@ function Consumos() {
             </header>
             <main>
                 <div className="tables">
-                    <h1>Produto mais consumido</h1>
+                    <h1 className='titles'> <strong>Produtos mais consumidos</strong> </h1>
                     <Table striped bordered hover variant="light">
-                        <thead>
+                        <thead className='titles-table'>
                             <tr>
                                 <th>Nome</th>
                                 <th>Quantidade</th>
@@ -23,7 +23,7 @@ function Consumos() {
                         </thead>
                         {typeof prod !== 'undefined' && prod.map((value) => {
                             return value ?
-                        <tbody>
+                        <tbody className='body-table'>
                             <tr>
                                 <td> {value[0]} </td>
                                 <td> {value[1]} </td>
@@ -31,9 +31,9 @@ function Consumos() {
                         </tbody>
                         :null})}
                     </Table>
-                    <h1>Serviço mais consumido</h1>
+                    <h1 className='titles'> <strong> Serviços mais consumidos </strong></h1>
                     <Table striped bordered hover variant="light">
-                        <thead>
+                        <thead className='titles-table'>
                             <tr>
                                 <th>Nome</th>
                                 <th>Quantidade</th>
@@ -41,7 +41,7 @@ function Consumos() {
                         </thead>
                         {typeof serv !== 'undefined' && serv.map((value) => {
                             return value ?
-                        <tbody>
+                        <tbody className='body-table'>
                             <tr>
                                 <td> {value[0]} </td>
                                 <td> {value[1]} </td>

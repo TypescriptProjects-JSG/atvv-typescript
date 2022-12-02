@@ -2,6 +2,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import NavBar_ from '../../../../component/barraNavegacao';
 import { useParams } from 'react-router-dom'
+import '../../../Cadastrar/styles.css'
 import Axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -47,19 +48,25 @@ function EditarServico() {
                 <NavBar_ />
             </header>
             <main>
-                <h1>Editar Serviço: {Nome[1]}</h1>
-                <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
-                <form>
-                    <div className="field">
-                        <label>Serviço:</label>
-                        <input type="text" placeholder={Nome[1]} onChange={(e) => setServico(e.target.value)}/>
-                    </div>
-                    <div className="field">
-                        <label>Preço:</label>
-                        <input type="number" placeholder={Nome[2]} onChange={(e) => setPreco(e.target.value)}/>
-                    </div>
-                    <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
-                </form>
+                <h1><strong>Editar Serviço:</strong> Massagem</h1>
+                <div className="forms">
+                    <form>
+                        <div className="field">
+                            <label>Nome do Serviço: </label>
+                            <input type="text" placeholder={Nome[1]} onChange={(e) => setServico(e.target.value)}/>
+                        </div>
+                        <div className="field">
+                            <label>Valor R$:</label>
+                            <input type="number" placeholder={Nome[2]} onChange={(e) => setPreco(e.target.value)}/>
+                        </div>
+                        <div className="campo-button">
+                            <div className="button-l">
+                                <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
+                            </div>
+                        <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
+                        </div>
+                    </form>
+                </div>
             </main>
 
         </section>

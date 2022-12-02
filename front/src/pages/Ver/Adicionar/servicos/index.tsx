@@ -1,7 +1,5 @@
-import {  Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 import NavBar_ from '../../../../component/barraNavegacao';
-import { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from "react";
@@ -73,8 +71,8 @@ function AdcServicos() {
                 <NavBar_ />
             </header>
             <main>
-                <h1 className="titles">  <strong> Sacola de contratações de:  </strong></h1>
-                <h2 className="titles">  {Nome[1]}, Total gasto: {valorTotal}</h2>
+                <h1 className="titles">  <strong> Sacola de contratações de: {Nome[1]} </strong></h1>
+                <h2 className="titles"> Total gasto: R$ {valorTotal}</h2>
                 <div className="tables">
                     <Table striped bordered hover variant="light">
                         <thead className="titles-table">
@@ -90,7 +88,7 @@ function AdcServicos() {
                             <tr>
                                 <td> {value[0]} </td>
                                 <td> {value[1]} </td>
-                                <td> {value[2]} </td>       
+                                <td> R$ {value[2]} </td>       
                             </tr>
                         </tbody>
                         :null})}
@@ -103,7 +101,7 @@ function AdcServicos() {
                             <tr>
                                 <th>Serviço</th>
                                 <th>Preço</th>
-                                <th>Ações</th>
+                                <th>Opções</th>
                             </tr>
                         </thead>
                         {typeof list !== 'undefined' && list.map((value) => {
@@ -111,19 +109,19 @@ function AdcServicos() {
                         <tbody>
                             <tr>
                                 <td> {value[1]} </td>
-                                <td> {value[2]} </td>                
+                                <td> R$ {value[2]} </td>                
                                 <td>
                                     <div>
-                                        <a href="" type='submit' onClick={() => handleSubmit(value[0])}>Adicionar ao cliente</a>
+                                        <a className="add-servico" href="" type='submit' onClick={() => handleSubmit(value[0])}>Adicionar ao cliente</a>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                         :null})}
                     </Table>
-                    <div className="button-l">
+                </div>
+                <div className="button-l">
                         <Button className="submit" variant="outline" onClick={() => navigate(-1)}>Voltar</Button>{' '} 
-                    </div>
                 </div>
             </main>
         </section>

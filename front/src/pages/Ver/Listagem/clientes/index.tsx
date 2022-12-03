@@ -29,10 +29,9 @@ function Clientes() {
             </header>
             <main>
                 <h1 className="titles"> <strong> Clientes WB </strong> </h1>
-                <h1>Clientes</h1>
                 <div className="tables">
                     <Table striped bordered hover variant="light">
-                        <thead>
+                        <thead  className="titles-table">
                             <tr>
                                 <th>Nome</th>
                                 <th>Nome Social</th>

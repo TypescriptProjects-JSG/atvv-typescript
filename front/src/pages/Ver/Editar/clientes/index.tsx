@@ -120,7 +120,7 @@ function EditarCliente() {
                                 <label>Gênero:</label>
                                 <input type="text" placeholder={Nome[3]} onChange={(e) => setGenero(e.target.value)}/>
                             </div>
-                            <div className="field">
+                            <div className="field direita">
                                 <label>CPF:</label>
                                 <input type="text" placeholder={Nome[4]} onChange={(e) => setCpf(e.target.value)}/>
                             </div>
@@ -145,11 +145,11 @@ function EditarCliente() {
                                     </div></>
                         :null})}
                         
-                        <div className="campo-button">
+                        <div className="campo-button campo-btns">
                             <div className="button-l">
                             <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
                             </div>
-                            <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
+                            <Button className="submit btn-resp"  variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
                         </div>
                     </form>
                 </div>

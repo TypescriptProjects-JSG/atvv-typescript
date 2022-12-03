@@ -122,9 +122,7 @@ function AdcProdutos() {
                         :null})}
                     </Table>
                 </div>
-                <div className="button-l">
-                        <Button className="submit" variant="outline" onClick={() => navigate(-1)}>Voltar</Button>{' '} 
-                </div>
+                <Button className="submit submit-add" variant="outline" onClick={() => navigate(-1)}>Voltar</Button>{' '}
             </main>
         </section>
     );

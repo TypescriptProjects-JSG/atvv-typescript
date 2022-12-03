@@ -14,3 +14,15 @@
     text-align: center;
 }
 
+@media (max-width: 800px) {
+    
+    @media (max-width: 600px) {
+
+        .titles{
+            margin-top: 1%;
+        } 
+    }; 
+
+}; 
+
+

@@ -80,8 +80,17 @@ main h1{
     flex-direction: column;
 }
 
+.remove{
+    background-color: #e04c27b7;
+    color: rgb(255, 255, 255);
+    padding: 0.5% 1%;
+    border-radius: 6px;
+    text-decoration: none;
+    width: 11%;
+}
 
- @media (max-width: 632px) {
+    
+@media (max-width: 632px) {
     .Button{
         display: none;
         flex-direction: column;
@@ -91,6 +100,6 @@ main h1{
     .icons{
         display: flex
     }
-    
 
-}; 
+}
+

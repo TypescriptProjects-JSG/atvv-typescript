@@ -59,11 +59,11 @@ function EditarProduto() {
                         <label>Valor R$:</label>
                             <input type="number" placeholder={Nome[2]} onChange={(e) => setPreco(e.target.value)}/>
                         </div>
-                        <div className="campo-button">
+                        <div className="campo-button campo-btns">
                             <div className="button-l">
                                 <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
                             </div>
-                            <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
+                            <Button className="submit btn-resp" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
                         </div>
                     </form>
                 </div>

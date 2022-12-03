@@ -17,9 +17,9 @@ function Consumos() {
                 <NavBar_ />
             </header>
             <main>
+                <h1 className='titles'><strong>Produtos mais consumidos por gênero</strong></h1>
+                <h3 className='titles'><strong>Feminino</strong></h3>
                 <div className="tables">
-                    <h1 className='titles'><strong>Produtos mais consumidos por gênero</strong></h1>
-                    <h3 className='titles'><strong>Feminino</strong></h3>
                     <Table striped bordered hover variant="light">
                         <thead className='titles-table'>
                             <tr>
@@ -39,7 +39,9 @@ function Consumos() {
                             
                         </tbody>
                     </Table>
-                    <h3 className='titles'><strong>Masculino</strong></h3>
+                </div>
+                <h3 className='titles'><strong>Masculino</strong></h3>
+                <div className="tables">
                     <Table striped bordered hover variant="light">
                         <thead className='titles-table'>
                             <tr>
@@ -59,8 +61,10 @@ function Consumos() {
                             
                         </tbody>
                     </Table>
-                    <h1 className='titles'> <strong> Serviços mais consumidos </strong></h1>
-                    <h3 className='titles'><strong>Feminino</strong></h3>
+                </div>
+                <h1 className='titles'> <strong> Serviços mais consumidos </strong></h1>
+                <h3 className='titles'><strong>Feminino</strong></h3>
+                <div className="tables">
                     <Table striped bordered hover variant="light">
                         <thead className='titles-table'>
                             <tr>
@@ -80,7 +84,9 @@ function Consumos() {
                             
                         </tbody>
                     </Table>
-                    <h3 className='titles'><strong>Masculino</strong></h3>
+                </div>
+                <h3 className='titles'><strong>Masculino</strong></h3>
+                <div className="tables">
                     <Table striped bordered hover variant="light">
                         <thead className='titles-table'>
                             <tr>

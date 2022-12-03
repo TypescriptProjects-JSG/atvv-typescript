@@ -38,7 +38,7 @@ function CadastrarProdutos() {
                         </div>
                         <div className="field">
                             <label>Valor R$</label>
-                            <input placeholder='XX,XX' type="number" min={0} onChange={(e) => setPreco(e.target.value)}/>
+                            <input placeholder='XX' type="number" min={0} onChange={(e) => setPreco(e.target.value)}/>
                         </div>
                         <Button className="submit" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
                     </form>

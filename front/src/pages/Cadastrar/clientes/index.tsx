@@ -73,7 +73,7 @@ function CadastrarClientes() {
                 <NavBar_ />
             </header>
             <main>
-                <h1 className='cadastro-titulo'><strong>Cadastro de Clientes</strong></h1>
+                <h1 className='margin-titulo'><strong>Cadastro de Clientes</strong></h1>
                 <div className="forms">
                     <form>
                         <div className="field">
@@ -112,7 +112,7 @@ function CadastrarClientes() {
                         <div className="btns">
                                 <Button className="add add-color" variant="outline-dark" type="button" onClick={() => addFormTell()}>Adicionar Telefone</Button>
                                 <Button className="add add-color" variant="outline-dark" type="button" onClick={() => addFormRg()}>Adicionar RG</Button>
-                                <Button className="add" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
+                                <Button className="add add-green" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Cadastrar</Button>{' '}
                         </div>
                         
                     </form>

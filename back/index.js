@@ -61,12 +61,16 @@ async function servicosc(){
 // deletar
 async function deletar(id,tabela){
     const con = await connect();
+    if(tabela == 'cliente'){
+        con.query(`DELETE FROM relacaoprodutos WHERE cliente_id = ${id};`)
+        con.query(`DELETE FROM relacaoservicos WHERE cliente_id = ${id};`)
+        
+    }
     con.query(`DELETE FROM ${tabela}s
     WHERE ${tabela}_id = ${id};`)
 }
 // editar
 async function editarCliente(id,edicao){
-    console.log(edicao);
     const con = await connect();
     con.query(`update clientes 
     set ${edicao}
@@ -286,7 +290,6 @@ app.post("/deletar", (req, res) => {
             for(k in telefones){
                 tell = telefones[k]
                 if(tell.cliente_id == id){
-                    console.log(tell.telefone_id);
                     deletar(tell.telefone_id,'telefone')
                 }
             }

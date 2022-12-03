@@ -65,10 +65,10 @@ async function deletar(id,tabela){
     WHERE ${tabela}_id = ${id};`)
 }
 // editar
-async function editarCliente(id,nome,nome_social,genero,cpf,rg,rg_data,telefone){
+async function editarCliente(id,edicao){
     const con = await connect();
     con.query(`update clientes 
-    set nome = '${nome}',nome_social = '${nome_social}',genero = '${genero}',cpf = '${cpf}',rg = '${rg}',rg_data = '${rg_data}',telefone = '${telefone}'
+    set ${edicao}
     where cliente_id = ${id};`)
 }
 async function editar(id,item,valor,tabela){
@@ -302,11 +302,34 @@ app.post("/editar/cliente", (req, res) => {
     const { nome_social } = req.body;
     const { genero } = req.body;
     const { cpf } = req.body;
-    const { rg } = req.body;
-    const { data_rg } = req.body;
-    const { telefone } = req.body;
 
-    editarCliente(id,nome,nome_social,genero,cpf,rg,data_rg,telefone)
+    var edicao = new String;
+    if(nome != ''){
+        edicao += `nome = '${nome}'`
+    }
+    if(nome_social != ''){
+        if(edicao.length>0){
+            edicao += `,nome_social = '${nome_social}'`
+        }else{
+            edicao += `nome_social = '${nome_social}'`
+        }
+    }
+    if(genero != ''){
+        if(edicao.length>0){
+            edicao += `,genero = '${genero}'`
+        }else{
+            edicao += `genero = '${genero}'`
+        }
+    }
+    if(cpf != ''){
+        if(edicao.length>0){
+            edicao += `,nome = '${cpf}'`
+        }else{
+            edicao += `nome = '${cpf}'`
+        }
+    }
+
+    editarCliente(id,edicao)
 });
 
 app.post("/editar", (req, res) => {

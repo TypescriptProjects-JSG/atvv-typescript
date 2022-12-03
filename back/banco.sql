@@ -1,4 +1,3 @@
-drop database wb; 
 create database wb;
 use wb;
 

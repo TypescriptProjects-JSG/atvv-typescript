@@ -1,6 +1,5 @@
 import { Button } from 'react-bootstrap';
 import NavBar_ from '../../../component/barraNavegacao'
-import '../styles.css'
 import React, { useState } from "react";
 import Axios from "axios";
 import { toast } from 'react-toastify';
@@ -9,10 +8,6 @@ function CadastrarServicos() {
     const [servico, setServico] = useState('');
     const [preco, setPreco] = useState('');
 
-    let clearAreas = () => {
-        setServico(''),
-        setPreco('')
-      }
     function handleSubmit() {
         toast.success('Cadastrado feito com sucesso!');
     
@@ -21,7 +16,6 @@ function CadastrarServicos() {
           preco: preco
         }).then((res)=>{
           console.log(res)
-          clearAreas()
         })    
     }
     return (

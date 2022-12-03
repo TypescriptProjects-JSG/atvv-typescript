@@ -332,8 +332,10 @@ app.post("/editar/cliente", (req, res) => {
             edicao += `nome = '${cpf}'`
         }
     }
-
-    editarCliente(id,edicao)
+    if(nome != '' || nome_social != '' || genero != '' || cpf != '' ){
+        editarCliente(id,edicao)
+    }
+    
 });
 
 app.post("/editar", (req, res) => {
@@ -353,8 +355,9 @@ app.post("/editar", (req, res) => {
             edicao += `preco = '${preco}'`
         }
     }
-
-    editar(id,edicao,tabela)
+    if(item != '' || preco != ''){
+        editar(id,edicao,tabela)
+    }
 });
 
 // adicionar

@@ -8,10 +8,6 @@ function CadastrarProdutos() {
     const [produto, setProduto] = useState('');
     const [preco, setPreco] = useState('');
 
-    let clearAreas = () => {
-        setProduto('')
-        setPreco('')
-      }
     function handleSubmit() {
         toast.success('Cadastrado feito com sucesso!');
     
@@ -20,7 +16,6 @@ function CadastrarProdutos() {
           preco: preco
         }).then((res)=>{
           console.log(res)
-          clearAreas()
         })    
     }
     return (

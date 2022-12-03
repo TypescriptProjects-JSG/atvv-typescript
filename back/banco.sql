@@ -10,38 +10,38 @@ genero varchar(30),
 cpf varchar(30)
 );
 
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
-insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Xuria','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Júlia','Júlia','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Olivia','Olivia','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Carla','Carla','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Flávia','Flávia','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Renata','Renata','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Valéria','Valéria','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Simone','Simone','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Lívia','Lívia','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Amanda','Amanda','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Fernanda','Fernanda','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Beatriz','Beatriz','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Lola','Lola','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Danielle','Danielle','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Ananda','Ananda','Feminino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Carlos','Carlos','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Eduardo','Eduardo','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Cláudio','Cláudio','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Rodrigo','Rodrigo','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Rodolfo','Rodolfo','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Adam','Adam','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Arthur','Arthur','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Felipe','Felipe','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Júlio','Júlio','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Fernando','Fernando','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Jorge','Jorge','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Marco','Marco','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Marcos','Marcos','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Sergio','Sergio','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Clélio','Clélio','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Gustavo','Gustavo','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Miguel','Miguel','Masculino','444.444.444-44');
+insert into clientes(nome,nome_social,genero,cpf) values('Gabriel','Gabriel','Masculino','444.444.444-44');
 
 create table rgs(
 rg_id int primary key auto_increment,
@@ -127,28 +127,28 @@ produto varchar(30),
 preco numeric
 );
 
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
-insert into produtos(produto,preco) values('shampoo',100);
+insert into produtos(produto,preco) values('shampoo',30);
+insert into produtos(produto,preco) values('condicionador',30);
+insert into produtos(produto,preco) values('creme de barbear',25);
+insert into produtos(produto,preco) values('barbeador', 30);
+insert into produtos(produto,preco) values('esmalte rosa',15);
+insert into produtos(produto,preco) values('máscara capilar',50);
+insert into produtos(produto,preco) values('creme de rosto',120);
+insert into produtos(produto,preco) values('creme de mão',50);
+insert into produtos(produto,preco) values('escova', 30);
+insert into produtos(produto,preco) values('pente',20);
+insert into produtos(produto,preco) values('tinta preta',35);
+insert into produtos(produto,preco) values('tinta castanho-escuro',35);
+insert into produtos(produto,preco) values('chapinha',200);
+insert into produtos(produto,preco) values('máscara de rosto', 45);
+insert into produtos(produto,preco) values('esmalte branco', 15);
+insert into produtos(produto,preco) values('esmalte preto',15);
+insert into produtos(produto,preco) values('esmalte vermelho',15);
+insert into produtos(produto,preco) values('tinta rosa',40);
+insert into produtos(produto,preco) values('tinta azul',40);
+insert into produtos(produto,preco) values('tinta verde-água', 40);
+insert into produtos(produto,preco) values('base de unha',20);
+insert into produtos(produto,preco) values('gel de cabelo',25);
 
 create table servicos(
 servico_id int primary key auto_increment,
@@ -156,28 +156,28 @@ servico varchar(30),
 preco numeric
 );
 
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
-insert into servicos(servico,preco) values('Massagem',2000);
+insert into servicos(servico,preco) values('Massagem',300);
+insert into servicos(servico,preco) values('Manicure',50);
+insert into servicos(servico,preco) values('Pedicure',70);
+insert into servicos(servico,preco) values('Corte de cabelo feminino',100);
+insert into servicos(servico,preco) values('Corte de cabelo masculino',30);
+insert into servicos(servico,preco) values('Remoção de rugas',2000);
+insert into servicos(servico,preco) values('Remoção de manchas na pele',1750);
+insert into servicos(servico,preco) values('Aplicação de Botox',3500);
+insert into servicos(servico,preco) values('Modelagem e corte de barba',40);
+insert into servicos(servico,preco) values('Tratamento quedas de cabelo',2000);
+insert into servicos(servico,preco) values('Tratamento para emagrecimento',6000);
+insert into servicos(servico,preco) values('Escova progressiva',120);
+insert into servicos(servico,preco) values('Selagem',200);
+insert into servicos(servico,preco) values('Design de sobrancelhas',70);
+insert into servicos(servico,preco) values('Maquiagem',70);
+insert into servicos(servico,preco) values('Limpeza de pele',120);
+insert into servicos(servico,preco) values('SPA',2000);
+insert into servicos(servico,preco) values('Penteado',150);
+insert into servicos(servico,preco) values('Hidratação capilar',100);
+insert into servicos(servico,preco) values('Pintura de cabelo',135);
+insert into servicos(servico,preco) values('Nutrição capilar',115);
+insert into servicos(servico,preco) values('Restauração capilar',155);
 
 create table relacaoServicos(
 servico_id int,

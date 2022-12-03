@@ -66,15 +66,16 @@ async function deletar(id,tabela){
 }
 // editar
 async function editarCliente(id,edicao){
+    console.log(edicao);
     const con = await connect();
     con.query(`update clientes 
     set ${edicao}
     where cliente_id = ${id};`)
 }
-async function editar(id,item,valor,tabela){
+async function editar(id,edicao,tabela){
     const con = await connect();
     con.query(`update ${tabela}s
-    set ${tabela} = '${item}',preco = '${valor}'
+    set ${edicao}
     where ${tabela}_id = ${id};`)
 }
 // adicionar
@@ -338,7 +339,19 @@ app.post("/editar", (req, res) => {
     const { preco } = req.body;
     const { tabela } = req.body;
 
-    editar(id,item,preco,tabela)
+    var edicao = new String;
+    if(item != ''){
+        edicao += `${tabela} = '${item}'`
+    }
+    if(preco != ''){
+        if(edicao.length>0){
+            edicao += `,preco = '${preco}'`
+        }else{
+            edicao += `preco = '${preco}'`
+        }
+    }
+
+    editar(id,edicao,tabela)
 });
 
 // adicionar

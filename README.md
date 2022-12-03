@@ -37,7 +37,7 @@ git clone https://github.com/TypescriptProjects-JSG/atvv-typescript
 
 <img src="img/index.png">
 
-3.Entrar na pasta do projeto (cd atvi-typescript) e executar:
+3.Entrar na pasta do projeto (cd atvv-typescript) e executar:
 
 ```
 cd back

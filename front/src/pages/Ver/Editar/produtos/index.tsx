@@ -61,7 +61,7 @@ function EditarProduto() {
                         </div>
                         <div className="campo-button campo-btns">
                             <div className="button-l">
-                                <Button className="submit" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
+                                <Button className="submit" variant="outline-dark" onClick={() => navigate("/produtos")}>Voltar</Button>{' '}
                             </div>
                             <Button className="submit btn-resp" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}
                         </div>

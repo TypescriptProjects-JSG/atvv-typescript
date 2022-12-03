@@ -25,7 +25,7 @@
 
 <h2 id="manual"> 📜Manual do Usuário </h2>
 
-Requisitos: ter instalado o Node JS.
+Requisitos: ter instalado o Node JS e o MySQL.
 
 1.Criar uma pasta e clonar o repositório com o seguinte comando no cmd: </li>
 
@@ -60,7 +60,7 @@ npm start
 <h2 id="pastas"> 🗂Configuração das pastas</h2>
 
 <ul>
-    <li>back: pasta com o arquivo sql e arquijo inde.js</li>
+    <li>back: pasta com o arquivo sql e arquivo index.js</li>
     <li>front: </li>
     <ul>
         <li> public: pasta com o arquivo index.html e o favicon</li>

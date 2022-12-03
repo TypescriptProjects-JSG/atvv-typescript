@@ -61,7 +61,7 @@ function EditarServico() {
                         </div>
                         <div className="campo-button campo-btns">
                             <div className="button-l">
-                                <Button className="submit btn-resp" variant="outline-dark" onClick={() => navigate(-1)}>Voltar</Button>{' '}
+                                <Button className="submit btn-resp" variant="outline-dark" onClick={() => navigate("/servicos")}>Voltar</Button>{' '}
                             </div>
                             <div>
                             <Button className="submit btn-resp" variant="outline-dark" type='submit' onClick={() => handleSubmit()}>Editar</Button>{' '}

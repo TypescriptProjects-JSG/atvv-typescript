@@ -32,9 +32,6 @@ function EditarCliente() {
           nome_social: nome_social,
           genero: genero,
           cpf: cpf,
-          rg: rg,
-          data_rg: data_rg,
-          telefone: telefone,
           id: id
         }).then((res)=>{
           console.log(res)

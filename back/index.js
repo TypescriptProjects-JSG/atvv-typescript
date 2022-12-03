@@ -20,11 +20,11 @@ async function cliente(nome,nome_social,genero,cpf,rgs,telefones){
         var rg = rgdado[0]
         var data = rgdado[1]
         con.query(`insert into rgs (rg,rg_data,cliente_id) 
-        values('${rg}','${data}','${id}')`)
+        values('   ${rg}','${data}','${id}')`)
     }
     for(k=0; telefones.length>k; ++k){
         con.query(`insert into telefones (telefone,cliente_id) 
-        values('${telefones[k]}','${id}')`)
+        values('   ${telefones[k]}','${id}')`)
     }
 }
 async function produtoc(produto,preco){
